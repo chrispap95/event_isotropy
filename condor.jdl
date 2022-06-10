@@ -1,0 +1,10 @@
+universe = vanilla
+Executable = condor-exec.sh
+Should_Transfer_Files = YES
+WhenToTransferOutput = ON_EXIT
+Transfer_Input_Files = condor-exec.sh
+Arguments = CMSSW_10_6_30 5000 generic $(Cluster) $(Process)
+Output = log/suep_generic_$(Cluster)_$(Process).stdout
+Error = log/suep_generic_$(Cluster)_$(Process).stderr
+Log = log/suep_generic_$(Cluster)_$(Process).log
+Queue 1
